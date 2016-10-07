@@ -1,15 +1,14 @@
 var angular = require('angular');
-var _ = require('lodash');
 
-module.exports = function OnlyTransformerFactory() {
+module.exports = function IdTransformerService() {
 
   this.transformRequest = transformRequest;
 
   function transformRequest(fields) {
-    if (!angular.isArray(fields)) {
+    if (angular.isString(fields)) {
       fields = [fields];
     }
-
+    
     return function (data) {
       var result;
       if (angular.isString(data)) {
@@ -18,9 +17,13 @@ module.exports = function OnlyTransformerFactory() {
         result = angular.copy(data);
       }
 
-      result = _.pick(result, fields);
+      fields.forEach(function(field) {
+        if (angular.isObject(result[field])) {
+          result[field] = result[field].id
+        }
+      });
 
       return angular.toJson(result);
     }
   }
-}
+};
