@@ -1,7 +1,7 @@
-import angular from 'angular';
-import _ from 'lodash';
+var angular = require('angular');
+var _ = require('lodash');
 
-export default function OnlyTransformerFactory() {
+module.exports = function OnlyTransformerFactory() {
 
   this.transformRequest = transformRequest;
 

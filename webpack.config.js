@@ -44,9 +44,6 @@ module.exports = {
     'lodash': '_',
     'moment': 'moment'
   },
-  watchOptions: {
-    poll: 1000
-  },
   eslint: {
     quiet: false
   }

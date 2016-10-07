@@ -1,6 +1,7 @@
-import angular from 'angular';
-import _ from 'lodash';
-import moment from 'moment';
+var angular = require('angular');
+var _ = require('lodash');
+var moment = require('moment');
+
 /**
  * @ngdoc service
  * @name components.factory:dateTransformer
@@ -255,4 +256,4 @@ function DateTransformerFactory($http) {
 
 DateTransformerFactory.$inject = ['$http'];
 
-export default DateTransformerFactory;
+module.exports = DateTransformerFactory;

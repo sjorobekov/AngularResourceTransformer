@@ -1,6 +1,6 @@
-import angular from 'angular';
+var angular = require('angular');
 
-export default angular.module('sjResourceTransformer', [])
+module.exports = angular.module('sjResourceTransformer', [])
   .factory('OnlyTransformer', require('./OnlyTransformerFactory'))
   .factory('DateTransformer', require('./DateTransformerFactory'))
   .name;
