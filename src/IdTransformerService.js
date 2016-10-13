@@ -8,7 +8,7 @@ module.exports = function IdTransformerService() {
     if (angular.isString(fields)) {
       fields = [fields];
     }
-    
+
     return function (data) {
       var result;
       if (angular.isString(data)) {
